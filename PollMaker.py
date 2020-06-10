@@ -875,23 +875,26 @@ class PollMaker():
         print('done')
 
 poll = PollMaker()
-try:
-    poll.Q01()
-    poll.Q02()
-    poll.Q03()
-    poll.Q04()
-    poll.Q06()
-    poll.Q07()
-    poll.Q09()
-    poll.Q12()
-    poll.Q15()
-    poll.Q17()
-    poll.Q19()
-    poll.Q20()
-    poll.Q21()
-    poll.Q22()
-    poll.Q23()
-    poll.Q24()
-    poll.Q25()
-except:
-    driver.quit()
+for i in range(0,5):
+    while True:
+        try:
+            poll.Q01()
+            poll.Q02()
+            poll.Q03()
+            poll.Q04()
+            poll.Q06()
+            poll.Q07()
+            poll.Q09()
+            poll.Q12()
+            poll.Q15()
+            poll.Q17()
+            poll.Q19()
+            poll.Q20()
+            poll.Q21()
+            poll.Q22()
+            poll.Q23()
+            poll.Q24()
+            poll.Q25()
+        except:
+            continue
+        break
