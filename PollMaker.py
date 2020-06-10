@@ -896,5 +896,6 @@ for i in range(0,5):
             poll.Q24()
             poll.Q25()
         except:
+            driver.quit()
             continue
         break
