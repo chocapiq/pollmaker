@@ -3,23 +3,45 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver import ActionChains
 import random
 
-baseUrl = "https://docs.google.com/forms/d/e/1FAIpQLSf94g2-TSUgduHEoTI8Ecjrd2074M6rB6vEEGwmQwuu7jN3zw/viewform"
-driver = webdriver.Chrome()
-driver.maximize_window()
-driver.get(baseUrl)
-driver.implicitly_wait(3)
-
-z = None
-
 class PollMaker():
+    def __init__(self, driver=1):
+        self.driver = driver
+
+    def getWebdriverInstance(self):
+        baseUrl = "https://docs.google.com/forms/d/e/1FAIpQLSf94g2-TSUgduHEoTI8Ecjrd2074M6rB6vEEGwmQwuu7jN3zw/viewform"
+        if self.driver == 1:
+            self.driver = webdriver.Chrome()
+            self.driver.maximize_window()
+            self.driver.get(baseUrl)
+            self.driver.implicitly_wait(3)
+
+            self.Q01()
+            self.Q02()
+            self.Q03()
+            self.Q04()
+            self.Q06()
+            self.Q07()
+            self.Q09()
+            self.Q12()
+            self.Q15()
+            self.Q17()
+            self.Q19()
+            self.Q20()
+            self.Q21()
+            self.Q22()
+            self.Q23()
+            self.Q24()
+            self.Q25()
+            self.quit()
+
     def Q01(self):
         a = random.randint(1,8)
-        element1 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[1]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element2 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[1]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element3 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[1]/div[1]/div[2]/div[1]/span[1]/div[1]/div[3]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element4 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[1]/div[1]/div[2]/div[1]/span[1]/div[1]/div[4]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element5 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[1]/div[1]/div[2]/div[1]/span[1]/div[1]/div[5]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element6 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[1]/div[1]/div[2]/div[1]/span[1]/div[1]/div[6]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element1 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[1]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element2 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[1]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element3 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[1]/div[1]/div[2]/div[1]/span[1]/div[1]/div[3]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element4 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[1]/div[1]/div[2]/div[1]/span[1]/div[1]/div[4]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element5 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[1]/div[1]/div[2]/div[1]/span[1]/div[1]/div[5]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element6 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[1]/div[1]/div[2]/div[1]/span[1]/div[1]/div[6]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
         element1.location_once_scrolled_into_view
         if a == 1:
             element1.click()
@@ -36,15 +58,15 @@ class PollMaker():
 
     def Q02(self):
         a = random.randint(1, 19)
-        element1 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[2]/div[1]/div[2]/div[1]/div[1]/label[1]/div[1]/div[1]/div[2]")
-        element2 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[2]/div[1]/div[2]/div[2]/div[1]/label[1]/div[1]/div[1]/div[2]")
-        element3 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[2]/div[1]/div[2]/div[3]/div[1]/label[1]/div[1]/div[1]/div[2]")
-        element4 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[2]/div[1]/div[2]/div[4]/div[1]/label[1]/div[1]/div[1]/div[2]")
-        element5 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[2]/div[1]/div[2]/div[5]/div[1]/label[1]/div[1]/div[1]/div[2]")
-        element6 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[2]/div[1]/div[2]/div[6]/div[1]/label[1]/div[1]/div[1]/div[2]")
-        element7 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[2]/div[1]/div[2]/div[7]/div[1]/label[1]/div[1]/div[1]/div[2]")
-        element8 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[2]/div[1]/div[2]/div[8]/div[1]/label[1]/div[1]/div[1]/div[2]")
-        element9 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[2]/div[1]/div[2]/div[9]/div[1]/label[1]/div[1]/div[1]/div[2]")
+        element1 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[2]/div[1]/div[2]/div[1]/div[1]/label[1]/div[1]/div[1]/div[2]")
+        element2 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[2]/div[1]/div[2]/div[2]/div[1]/label[1]/div[1]/div[1]/div[2]")
+        element3 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[2]/div[1]/div[2]/div[3]/div[1]/label[1]/div[1]/div[1]/div[2]")
+        element4 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[2]/div[1]/div[2]/div[4]/div[1]/label[1]/div[1]/div[1]/div[2]")
+        element5 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[2]/div[1]/div[2]/div[5]/div[1]/label[1]/div[1]/div[1]/div[2]")
+        element6 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[2]/div[1]/div[2]/div[6]/div[1]/label[1]/div[1]/div[1]/div[2]")
+        element7 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[2]/div[1]/div[2]/div[7]/div[1]/label[1]/div[1]/div[1]/div[2]")
+        element8 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[2]/div[1]/div[2]/div[8]/div[1]/label[1]/div[1]/div[1]/div[2]")
+        element9 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[2]/div[1]/div[2]/div[9]/div[1]/label[1]/div[1]/div[1]/div[2]")
         element1.location_once_scrolled_into_view
         if a in range(1,15):
             element1.click()
@@ -73,36 +95,36 @@ class PollMaker():
         e = random.randint(1, 5)
         f = random.randint(1, 5)
 
-        element11 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
-        element12 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
-        element13 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
-        element14 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
-        element15 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
-        element21 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
-        element22 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
-        element23 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
-        element24 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
-        element25 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
-        element31 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
-        element32 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
-        element33 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
-        element34 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
-        element35 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
-        element41 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
-        element42 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
-        element43 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
-        element44 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
-        element45 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
-        element51 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
-        element52 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
-        element53 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
-        element54 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
-        element55 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
-        element61 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[12]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
-        element62 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[12]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
-        element63 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[12]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
-        element64 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[12]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
-        element65 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[12]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
+        element11 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
+        element12 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
+        element13 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
+        element14 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
+        element15 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
+        element21 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
+        element22 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
+        element23 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
+        element24 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
+        element25 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
+        element31 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
+        element32 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
+        element33 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
+        element34 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
+        element35 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
+        element41 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
+        element42 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
+        element43 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
+        element44 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
+        element45 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
+        element51 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
+        element52 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
+        element53 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
+        element54 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
+        element55 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
+        element61 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[12]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
+        element62 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[12]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
+        element63 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[12]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
+        element64 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[12]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
+        element65 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[12]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
         element11.location_once_scrolled_into_view
         if a == 1:
             element11.click()
@@ -167,22 +189,22 @@ class PollMaker():
 
     def Q05(self):
         a = random.randint(1, 12)
-        element11 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[2]/label[1]/div[1]/div[1]/div[2]")
-        element12 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[2]/label[2]/div[1]/div[1]/div[2]")
-        element21 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[4]/label[1]/div[1]/div[1]/div[2]")
-        element22 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[4]/label[2]/div[1]/div[1]/div[2]")
-        element31 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[6]/label[1]/div[1]/div[1]/div[2]")
-        element32 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[6]/label[2]/div[1]/div[1]/div[2]")
-        element41 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[8]/label[1]/div[1]/div[1]/div[2]")
-        element42 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[8]/label[2]/div[1]/div[1]/div[2]")
-        element51 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[10]/label[1]/div[1]/div[1]/div[2]")
-        element52 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[10]/label[2]/div[1]/div[1]/div[2]")
-        element61 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[12]/label[1]/div[1]/div[1]/div[2]")
-        element62 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[12]/label[2]/div[1]/div[1]/div[2]")
-        element71 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[14]/label[1]/div[1]/div[1]/div[2]")
-        element72 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[14]/label[2]/div[1]/div[1]/div[2]")
-        element81 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[16]/label[1]/div[1]/div[1]/div[2]")
-        element82 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[16]/label[2]/div[1]/div[1]/div[2]")
+        element11 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[2]/label[1]/div[1]/div[1]/div[2]")
+        element12 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[2]/label[2]/div[1]/div[1]/div[2]")
+        element21 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[4]/label[1]/div[1]/div[1]/div[2]")
+        element22 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[4]/label[2]/div[1]/div[1]/div[2]")
+        element31 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[6]/label[1]/div[1]/div[1]/div[2]")
+        element32 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[6]/label[2]/div[1]/div[1]/div[2]")
+        element41 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[8]/label[1]/div[1]/div[1]/div[2]")
+        element42 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[8]/label[2]/div[1]/div[1]/div[2]")
+        element51 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[10]/label[1]/div[1]/div[1]/div[2]")
+        element52 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[10]/label[2]/div[1]/div[1]/div[2]")
+        element61 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[12]/label[1]/div[1]/div[1]/div[2]")
+        element62 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[12]/label[2]/div[1]/div[1]/div[2]")
+        element71 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[14]/label[1]/div[1]/div[1]/div[2]")
+        element72 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[14]/label[2]/div[1]/div[1]/div[2]")
+        element81 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[16]/label[1]/div[1]/div[1]/div[2]")
+        element82 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div/div/div/div/div/div/div[16]/label[2]/div[1]/div[1]/div[2]")
         element11.location_once_scrolled_into_view
         if a in range(1,5):
             element11.click()
@@ -246,12 +268,12 @@ class PollMaker():
 
     def Q04(self):
         a = random.randint(1, 6)
-        element1 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[4]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element2 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[4]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element3 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[4]/div[1]/div[2]/div[1]/span[1]/div[1]/div[3]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element4 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[4]/div[1]/div[2]/div[1]/span[1]/div[1]/div[4]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element5 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[4]/div[1]/div[2]/div[1]/span[1]/div[1]/div[5]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element6 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[4]/div[1]/div[2]/div[1]/span[1]/div[1]/div[6]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element1 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[4]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element2 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[4]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element3 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[4]/div[1]/div[2]/div[1]/span[1]/div[1]/div[3]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element4 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[4]/div[1]/div[2]/div[1]/span[1]/div[1]/div[4]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element5 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[4]/div[1]/div[2]/div[1]/span[1]/div[1]/div[5]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element6 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[4]/div[1]/div[2]/div[1]/span[1]/div[1]/div[6]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
         element1.location_once_scrolled_into_view
         if a == 1:
             element1.click()
@@ -275,11 +297,11 @@ class PollMaker():
     def Q06(self):
         a = random.randint(1, 6)
         print("Q06 " + str(a))
-        element1 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[6]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element2 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[6]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element3 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[6]/div[1]/div[2]/div[1]/span[1]/div[1]/div[3]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element4 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[6]/div[1]/div[2]/div[1]/span[1]/div[1]/div[4]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element5 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[6]/div[1]/div[2]/div[1]/span[1]/div[1]/div[5]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element1 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[6]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element2 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[6]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element3 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[6]/div[1]/div[2]/div[1]/span[1]/div[1]/div[3]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element4 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[6]/div[1]/div[2]/div[1]/span[1]/div[1]/div[4]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element5 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[6]/div[1]/div[2]/div[1]/span[1]/div[1]/div[5]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
         element1.location_once_scrolled_into_view
         if a == 1:
             element1.click()
@@ -304,31 +326,31 @@ class PollMaker():
         print("Q08 " + str(d))
         print("Q08 " + str(e))
 
-        element11 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
-        element12 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
-        element13 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
-        element14 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
-        element15 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
-        element21 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
-        element22 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
-        element23 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
-        element24 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
-        element25 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
-        element31 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
-        element32 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
-        element33 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
-        element34 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
-        element35 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
-        element41 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
-        element42 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
-        element43 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
-        element44 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
-        element45 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
-        element51 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
-        element52 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
-        element53 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
-        element54 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
-        element55 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
+        element11 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
+        element12 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
+        element13 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
+        element14 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
+        element15 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
+        element21 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
+        element22 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
+        element23 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
+        element24 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
+        element25 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
+        element31 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
+        element32 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
+        element33 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
+        element34 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
+        element35 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
+        element41 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
+        element42 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
+        element43 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
+        element44 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
+        element45 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
+        element51 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
+        element52 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
+        element53 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
+        element54 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
+        element55 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[8]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
         element11.location_once_scrolled_into_view
         if a == 1:
             element11.click()
@@ -384,8 +406,8 @@ class PollMaker():
     def Q07(self):
         a = random.randint(1, 5)
         print("Q07 " + str(a))
-        element1 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[7]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element2 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[7]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element1 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[7]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element2 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[7]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
         element1.location_once_scrolled_into_view
         if a in (1, 3):
             element1.click()
@@ -395,11 +417,11 @@ class PollMaker():
 
     def Q11(self):
         a = random.randint(1, 11)
-        element1 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[11]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element2 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[11]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element3 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[11]/div[1]/div[2]/div[1]/span[1]/div[1]/div[3]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element4 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[11]/div[1]/div[2]/div[1]/span[1]/div[1]/div[4]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element5 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[11]/div[1]/div[2]/div[1]/span[1]/div[1]/div[5]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element1 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[11]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element2 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[11]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element3 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[11]/div[1]/div[2]/div[1]/span[1]/div[1]/div[3]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element4 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[11]/div[1]/div[2]/div[1]/span[1]/div[1]/div[4]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element5 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[11]/div[1]/div[2]/div[1]/span[1]/div[1]/div[5]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
         if a in (1, 2):
             element1.click()
         if a in (3, 4, 5):
@@ -413,11 +435,11 @@ class PollMaker():
 
     def Q10(self):
         a = random.randint(1, 10)
-        element1 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[10]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element2 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[10]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element3 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[10]/div[1]/div[2]/div[1]/span[1]/div[1]/div[3]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element4 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[10]/div[1]/div[2]/div[1]/span[1]/div[1]/div[4]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element5 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[10]/div[1]/div[2]/div[1]/span[1]/div[1]/div[5]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element1 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[10]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element2 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[10]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element3 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[10]/div[1]/div[2]/div[1]/span[1]/div[1]/div[3]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element4 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[10]/div[1]/div[2]/div[1]/span[1]/div[1]/div[4]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element5 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[10]/div[1]/div[2]/div[1]/span[1]/div[1]/div[5]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
         if a in (1,2):
             element1.click()
         if a in (3,4,5):
@@ -433,8 +455,8 @@ class PollMaker():
 
     def Q09(self):
         a = random.randint(1, 2)
-        element1 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[9]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element2 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[9]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element1 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[9]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element2 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[9]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
         element1.location_once_scrolled_into_view
         if a == 1:
             element1.click()
@@ -444,11 +466,11 @@ class PollMaker():
 
     def Q14(self):
         a = random.randint(1, 12)
-        element1 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[14]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element2 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[14]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element3 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[14]/div[1]/div[2]/div[1]/span[1]/div[1]/div[3]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element4 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[14]/div[1]/div[2]/div[1]/span[1]/div[1]/div[4]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element5 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[14]/div[1]/div[2]/div[1]/span[1]/div[1]/div[5]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element1 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[14]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element2 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[14]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element3 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[14]/div[1]/div[2]/div[1]/span[1]/div[1]/div[3]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element4 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[14]/div[1]/div[2]/div[1]/span[1]/div[1]/div[4]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element5 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[14]/div[1]/div[2]/div[1]/span[1]/div[1]/div[5]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
         if a in (1,2):
             element1.click()
         if a in range(3,9):
@@ -462,16 +484,16 @@ class PollMaker():
 
     def Q13(self):
         a = random.randint(1, 19)
-        element1 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[13]/div[1]/div[2]/div[1]/div[1]/label[1]/div[1]/div[1]/div[2]")
-        element2 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[13]/div[1]/div[2]/div[2]/div[1]/label[1]/div[1]/div[1]/div[2]")
-        element3 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[13]/div[1]/div[2]/div[3]/div[1]/label[1]/div[1]/div[1]/div[2]")
-        element4 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[13]/div[1]/div[2]/div[4]/div[1]/label[1]/div[1]/div[1]/div[2]")
-        element5 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[13]/div[1]/div[2]/div[5]/div[1]/label[1]/div[1]/div[1]/div[2]")
-        element6 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[13]/div[1]/div[2]/div[6]/div[1]/label[1]/div[1]/div[1]/div[2]")
-        element7 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[13]/div[1]/div[2]/div[7]/div[1]/label[1]/div[1]/div[1]/div[2]")
-        element8 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[13]/div[1]/div[2]/div[8]/div[1]/label[1]/div[1]/div[1]/div[2]")
-        element9 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[13]/div[1]/div[2]/div[9]/div[1]/label[1]/div[1]/div[1]/div[2]")
-        element10 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[13]/div[1]/div[2]/div[10]/div[1]/label[1]/div[1]/div[1]/div[2]")
+        element1 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[13]/div[1]/div[2]/div[1]/div[1]/label[1]/div[1]/div[1]/div[2]")
+        element2 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[13]/div[1]/div[2]/div[2]/div[1]/label[1]/div[1]/div[1]/div[2]")
+        element3 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[13]/div[1]/div[2]/div[3]/div[1]/label[1]/div[1]/div[1]/div[2]")
+        element4 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[13]/div[1]/div[2]/div[4]/div[1]/label[1]/div[1]/div[1]/div[2]")
+        element5 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[13]/div[1]/div[2]/div[5]/div[1]/label[1]/div[1]/div[1]/div[2]")
+        element6 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[13]/div[1]/div[2]/div[6]/div[1]/label[1]/div[1]/div[1]/div[2]")
+        element7 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[13]/div[1]/div[2]/div[7]/div[1]/label[1]/div[1]/div[1]/div[2]")
+        element8 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[13]/div[1]/div[2]/div[8]/div[1]/label[1]/div[1]/div[1]/div[2]")
+        element9 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[13]/div[1]/div[2]/div[9]/div[1]/label[1]/div[1]/div[1]/div[2]")
+        element10 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[13]/div[1]/div[2]/div[10]/div[1]/label[1]/div[1]/div[1]/div[2]")
         element1.location_once_scrolled_into_view
         if a in range(1, 15):
             element1.click()
@@ -497,8 +519,8 @@ class PollMaker():
 
     def Q12(self):
         a = random.randint(1, 20)
-        element1 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[12]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element2 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[12]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element1 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[12]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element2 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[12]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
         element1.location_once_scrolled_into_view
         if a in range (1,14):
             element1.click()
@@ -512,32 +534,32 @@ class PollMaker():
         c = random.randint(1, 30)
         d = random.randint(1, 30)
 
-        element11 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
-        element12 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
-        element13 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
-        element14 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
-        element15 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
-        element16 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[7]/div[1]/div[1]/div[3]/div[1]")
-        element21 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
-        element22 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
-        element23 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
-        element24 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
-        element25 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
-        element26 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[7]/div[1]/div[1]/div[3]/div[1]")
-        element31 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
-        element32 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
-        element33 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
-        element34 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
-        element35 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
-        element36 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[7]/div[1]/div[1]/div[3]/div[1]")
-        element41 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
-        element42 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
-        element43 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
-        element44 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
-        element45 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
-        element46 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[7]/div[1]/div[1]/div[3]/div[1]")
+        element11 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
+        element12 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
+        element13 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
+        element14 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
+        element15 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
+        element16 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[7]/div[1]/div[1]/div[3]/div[1]")
+        element21 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
+        element22 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
+        element23 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
+        element24 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
+        element25 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
+        element26 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[7]/div[1]/div[1]/div[3]/div[1]")
+        element31 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
+        element32 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
+        element33 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
+        element34 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
+        element35 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
+        element36 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[7]/div[1]/div[1]/div[3]/div[1]")
+        element41 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
+        element42 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
+        element43 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
+        element44 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
+        element45 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
+        element46 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[7]/div[1]/div[1]/div[3]/div[1]")
         element11.location_once_scrolled_into_view
-        scroll1 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]")
+        scroll1 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[16]/div[1]/div[2]/div[1]/div[1]")
         if a in range(1, 7):
             element11.click()
         if a == 7:
@@ -549,11 +571,11 @@ class PollMaker():
         if a in range(19, 28):
             element15.click()
         if a in range(28, 31):
-            driver.execute_script("arguments[0].scrollIntoView(true);", element16)
+            self.driver.execute_script("arguments[0].scrollIntoView(true);", element16)
             element16.click()
-            ActionChains(driver).key_down(Keys.ARROW_LEFT, scroll1).perform()
-            ActionChains(driver).key_down(Keys.ARROW_LEFT, scroll1).perform()
-            ActionChains(driver).key_up(Keys.ARROW_LEFT).perform()
+            ActionChains(self.driver).key_down(Keys.ARROW_LEFT, scroll1).perform()
+            ActionChains(self.driver).key_down(Keys.ARROW_LEFT, scroll1).perform()
+            ActionChains(self.driver).key_up(Keys.ARROW_LEFT).perform()
         if b in range(1,12):
             element21.click()
         if b == 12:
@@ -565,11 +587,11 @@ class PollMaker():
         if b in range(22, 28):
             element25.click()
         if b in range(28, 31):
-            driver.execute_script("arguments[0].scrollIntoView(true);", element16)
+            self.driver.execute_script("arguments[0].scrollIntoView(true);", element16)
             element26.click()
-            ActionChains(driver).key_down(Keys.ARROW_LEFT, scroll1).perform()
-            ActionChains(driver).key_down(Keys.ARROW_LEFT, scroll1).perform()
-            ActionChains(driver).key_up(Keys.ARROW_LEFT).perform()
+            ActionChains(self.driver).key_down(Keys.ARROW_LEFT, scroll1).perform()
+            ActionChains(self.driver).key_down(Keys.ARROW_LEFT, scroll1).perform()
+            ActionChains(self.driver).key_up(Keys.ARROW_LEFT).perform()
         if c in range(1,13):
             element31.click()
         if c == 13:
@@ -581,11 +603,11 @@ class PollMaker():
         if c in range(24,28):
             element35.click()
         if c in range(28,31):
-            driver.execute_script("arguments[0].scrollIntoView(true);", element16)
+            self.driver.execute_script("arguments[0].scrollIntoView(true);", element16)
             element36.click()
-            ActionChains(driver).key_down(Keys.ARROW_LEFT, scroll1).perform()
-            ActionChains(driver).key_down(Keys.ARROW_LEFT, scroll1).perform()
-            ActionChains(driver).key_up(Keys.ARROW_LEFT).perform()
+            ActionChains(self.driver).key_down(Keys.ARROW_LEFT, scroll1).perform()
+            ActionChains(self.driver).key_down(Keys.ARROW_LEFT, scroll1).perform()
+            ActionChains(self.driver).key_up(Keys.ARROW_LEFT).perform()
         if d in range(1,20):
             element41.click()
         if d == 20:
@@ -597,15 +619,16 @@ class PollMaker():
         if d == 29:
             element45.click()
         if d == 30:
+            self.driver.execute_script("arguments[0].scrollIntoView(true);", element16)
             element46.click()
-            ActionChains(driver).key_down(Keys.ARROW_LEFT, scroll1).perform()
-            ActionChains(driver).key_down(Keys.ARROW_LEFT, scroll1).perform()
-            ActionChains(driver).key_up(Keys.ARROW_LEFT).perform()
+            ActionChains(self.driver).key_down(Keys.ARROW_LEFT, scroll1).perform()
+            ActionChains(self.driver).key_down(Keys.ARROW_LEFT, scroll1).perform()
+            ActionChains(self.driver).key_up(Keys.ARROW_LEFT).perform()
 
     def Q15(self):
         a = random.randint(1, 20)
-        element1 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[15]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element2 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[15]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element1 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[15]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element2 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[15]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
         element1.location_once_scrolled_into_view
         if a in range (1,7):
             element1.click()
@@ -615,11 +638,11 @@ class PollMaker():
 
     def Q18(self):
         a = random.randint(1, 13)
-        element1 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[18]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element2 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[18]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element3 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[18]/div[1]/div[2]/div[1]/span[1]/div[1]/div[3]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element4 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[18]/div[1]/div[2]/div[1]/span[1]/div[1]/div[4]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element5 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[18]/div[1]/div[2]/div[1]/span[1]/div[1]/div[5]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element1 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[18]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element2 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[18]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element3 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[18]/div[1]/div[2]/div[1]/span[1]/div[1]/div[3]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element4 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[18]/div[1]/div[2]/div[1]/span[1]/div[1]/div[4]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element5 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[18]/div[1]/div[2]/div[1]/span[1]/div[1]/div[5]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
         element1.location_once_scrolled_into_view
         if a in (1,2):
             element1.click()
@@ -634,8 +657,8 @@ class PollMaker():
 
     def Q17(self):
         a = random.randint(1, 5)
-        element1 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[17]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element2 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[17]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element1 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[17]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element2 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[17]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
         element1.location_once_scrolled_into_view
         if a in range(1,8):
             element1.click()
@@ -645,12 +668,12 @@ class PollMaker():
 
     def Q19(self):
         a = random.randint(1, 12)
-        element1 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[19]/div[1]/div[2]/div[1]/div[1]/label[1]/div[1]/div[1]/div[2]")
-        element2 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[19]/div[1]/div[2]/div[2]/div[1]/label[1]/div[1]/div[1]/div[2]")
-        element3 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[19]/div[1]/div[2]/div[3]/div[1]/label[1]/div[1]/div[1]/div[2]")
-        element4 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[19]/div[1]/div[2]/div[4]/div[1]/label[1]/div[1]/div[1]/div[2]")
-        element5 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[19]/div[1]/div[2]/div[5]/div[1]/label[1]/div[1]/div[1]/div[2]")
-        element6 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[19]/div[1]/div[2]/div[6]/div[1]/label[1]/div[1]/div[1]/div[2]")
+        element1 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[19]/div[1]/div[2]/div[1]/div[1]/label[1]/div[1]/div[1]/div[2]")
+        element2 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[19]/div[1]/div[2]/div[2]/div[1]/label[1]/div[1]/div[1]/div[2]")
+        element3 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[19]/div[1]/div[2]/div[3]/div[1]/label[1]/div[1]/div[1]/div[2]")
+        element4 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[19]/div[1]/div[2]/div[4]/div[1]/label[1]/div[1]/div[1]/div[2]")
+        element5 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[19]/div[1]/div[2]/div[5]/div[1]/label[1]/div[1]/div[1]/div[2]")
+        element6 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[19]/div[1]/div[2]/div[6]/div[1]/label[1]/div[1]/div[1]/div[2]")
         element1.location_once_scrolled_into_view
         if a in range(1, 9):
             element1.click()
@@ -667,11 +690,11 @@ class PollMaker():
 
     def Q20(self):
         a = random.randint(1, 12)
-        element1 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[20]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element2 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[20]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element3 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[20]/div[1]/div[2]/div[1]/span[1]/div[1]/div[3]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element4 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[20]/div[1]/div[2]/div[1]/span[1]/div[1]/div[4]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element5 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[20]/div[1]/div[2]/div[1]/span[1]/div[1]/div[5]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element1 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[20]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element2 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[20]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element3 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[20]/div[1]/div[2]/div[1]/span[1]/div[1]/div[3]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element4 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[20]/div[1]/div[2]/div[1]/span[1]/div[1]/div[4]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element5 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[20]/div[1]/div[2]/div[1]/span[1]/div[1]/div[5]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
         element1.location_once_scrolled_into_view
         if a in (1,2):
             element1.click()
@@ -692,42 +715,42 @@ class PollMaker():
         e = random.randint(1, 30)
         f = random.randint(1, 30)
 
-        element11 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
-        element12 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
-        element13 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
-        element14 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
-        element15 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
-        element16 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[7]/div[1]/div[1]/div[3]/div[1]")
-        element21 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
-        element22 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
-        element23 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
-        element24 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
-        element25 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
-        element26 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[7]/div[1]/div[1]/div[3]/div[1]")
-        element31 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
-        element32 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
-        element33 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
-        element34 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
-        element35 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
-        element36 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[7]/div[1]/div[1]/div[3]/div[1]")
-        element41 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
-        element42 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
-        element43 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
-        element44 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
-        element45 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
-        element46 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[7]/div[1]/div[1]/div[3]/div[1]")
-        element51 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
-        element52 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
-        element53 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
-        element54 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
-        element55 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
-        element56 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[7]/div[1]/div[1]/div[3]/div[1]")
-        element61 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[12]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
-        element62 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[12]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
-        element63 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[12]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
-        element64 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[12]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
-        element65 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[12]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
-        element66 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[12]/span[1]/div[7]/div[1]/div[1]/div[3]/div[1]")
+        element11 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
+        element12 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
+        element13 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
+        element14 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
+        element15 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
+        element16 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/span[1]/div[7]/div[1]/div[1]/div[3]/div[1]")
+        element21 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
+        element22 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
+        element23 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
+        element24 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
+        element25 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
+        element26 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]/span[1]/div[7]/div[1]/div[1]/div[3]/div[1]")
+        element31 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
+        element32 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
+        element33 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
+        element34 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
+        element35 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
+        element36 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[6]/span[1]/div[7]/div[1]/div[1]/div[3]/div[1]")
+        element41 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
+        element42 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
+        element43 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
+        element44 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
+        element45 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
+        element46 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[8]/span[1]/div[7]/div[1]/div[1]/div[3]/div[1]")
+        element51 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
+        element52 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
+        element53 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
+        element54 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
+        element55 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
+        element56 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[10]/span[1]/div[7]/div[1]/div[1]/div[3]/div[1]")
+        element61 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[12]/span[1]/div[2]/div[1]/div[1]/div[3]/div[1]")
+        element62 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[12]/span[1]/div[3]/div[1]/div[1]/div[3]/div[1]")
+        element63 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[12]/span[1]/div[4]/div[1]/div[1]/div[3]/div[1]")
+        element64 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[12]/span[1]/div[5]/div[1]/div[1]/div[3]/div[1]")
+        element65 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[12]/span[1]/div[6]/div[1]/div[1]/div[3]/div[1]")
+        element66 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[21]/div[1]/div[2]/div[1]/div[1]/div[1]/div[12]/span[1]/div[7]/div[1]/div[1]/div[3]/div[1]")
         element11.location_once_scrolled_into_view
         if a in range(1, 2):
             element11.click()
@@ -801,13 +824,13 @@ class PollMaker():
             element65.click()
         if f in range(30,31):
             element66.click()
-        go_next = driver.find_element_by_xpath("//span[contains(text(),'Dalej')]")
+        go_next = self.driver.find_element_by_xpath("//span[contains(text(),'Dalej')]")
         go_next.click()
 
     def Q22(self):
         a = random.randint(1, 50)
-        element1 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[2]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element2 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[2]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element1 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[2]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element2 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[2]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
         element1.location_once_scrolled_into_view
         if a in range (1,23):
             element1.click()
@@ -817,10 +840,10 @@ class PollMaker():
     def Q23(self):
         global z
         z = random.randint(1, 30)
-        element1 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element2 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element3 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/span[1]/div[1]/div[3]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element4 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/span[1]/div[1]/div[4]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element1 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element2 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element3 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/span[1]/div[1]/div[3]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element4 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[3]/div[1]/div[2]/div[1]/span[1]/div[1]/div[4]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
         element1.location_once_scrolled_into_view
         if z in range(1, 7):
             element1.click()
@@ -834,10 +857,10 @@ class PollMaker():
 
     def Q24(self):
         a = random.randint(1, 11)
-        element1 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[4]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element2 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[4]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element3 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[4]/div[1]/div[2]/div[1]/span[1]/div[1]/div[3]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element4 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[4]/div[1]/div[2]/div[1]/span[1]/div[1]/div[4]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element1 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[4]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element2 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[4]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element3 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[4]/div[1]/div[2]/div[1]/span[1]/div[1]/div[3]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element4 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[4]/div[1]/div[2]/div[1]/span[1]/div[1]/div[4]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
         element1.location_once_scrolled_into_view
         if a in (1,2):
             element1.click()
@@ -857,10 +880,10 @@ class PollMaker():
                 a = random.randint(2,30)
         else:
             a = random.randint(2, 30)
-        element1 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[5]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element2 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[5]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element3 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[5]/div[1]/div[2]/div[1]/span[1]/div[1]/div[3]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
-        element4 = driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[5]/div[1]/div[2]/div[1]/span[1]/div[1]/div[4]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element1 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[5]/div[1]/div[2]/div[1]/span[1]/div[1]/div[1]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element2 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[5]/div[1]/div[2]/div[1]/span[1]/div[1]/div[2]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element3 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[5]/div[1]/div[2]/div[1]/span[1]/div[1]/div[3]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
+        element4 = self.driver.find_element_by_xpath("//body/div/div/form/div/div/div/div[5]/div[1]/div[2]/div[1]/span[1]/div[1]/div[4]/label[1]/div[1]/div[1]/div[1]/div[3]/div[1]")
         element1.location_once_scrolled_into_view
         if a == 1:
             element1.click()
@@ -870,32 +893,34 @@ class PollMaker():
             element3.click()
         if a in range(29,31):
             element4.click()
-        send0 = driver.find_element_by_xpath("//span[contains(text(),'Prze')]")
+        send0 = self.driver.find_element_by_xpath("//span[contains(text(),'Prze')]")
         send0.click()
         print('done')
 
+    def quit(self):
+        print('done')
+        self.driver.quit()
+
+
 poll = PollMaker()
-for i in range(0,5):
+
+for e in range(1,5):
     while True:
         try:
-            poll.Q01()
-            poll.Q02()
-            poll.Q03()
-            poll.Q04()
-            poll.Q06()
-            poll.Q07()
-            poll.Q09()
-            poll.Q12()
-            poll.Q15()
-            poll.Q17()
-            poll.Q19()
-            poll.Q20()
-            poll.Q21()
-            poll.Q22()
-            poll.Q23()
-            poll.Q24()
-            poll.Q25()
+            poll.getWebdriverInstance()
+            print(str(e) + ' try')
         except:
-            driver.quit()
+            poll.quit()
+            print(str(e) + ' except')
             continue
         break
+'''for e in range(1,5):
+    while True:
+        try:
+            poll.getWebdriverInstance()
+            print(str(e) + ' try')
+        except:
+            poll.quit()
+            print(str(e) + ' except')
+            continue
+        break'''
