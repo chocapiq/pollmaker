@@ -901,26 +901,6 @@ class PollMaker():
         print('done')
         self.driver.quit()
 
-
 poll = PollMaker()
+poll.getWebdriverInstance()
 
-for e in range(1,5):
-    while True:
-        try:
-            poll.getWebdriverInstance()
-            print(str(e) + ' try')
-        except:
-            poll.quit()
-            print(str(e) + ' except')
-            continue
-        break
-'''for e in range(1,5):
-    while True:
-        try:
-            poll.getWebdriverInstance()
-            print(str(e) + ' try')
-        except:
-            poll.quit()
-            print(str(e) + ' except')
-            continue
-        break'''
